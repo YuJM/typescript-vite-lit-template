@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 질문하기
+    url: https://github.com/YuJM/typescript-vite-lit-template/discussions
+    about: 프로젝트에 대한 질문은 디스커션을 이용해주세요
+  - name: 문서
+    url: https://github.com/YuJM/typescript-vite-lit-template#readme
+    about: README와 문서를 먼저 확인해주세요

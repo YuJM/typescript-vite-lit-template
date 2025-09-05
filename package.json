@@ -1,0 +1,29 @@
+{
+  "name": "typescript-vite-lit-template",
+  "version": "1.0.0",
+  "description": "A modern template for TypeScript, Vite, and Lit web components",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  },
+  "keywords": [
+    "typescript",
+    "vite",
+    "lit",
+    "web-components",
+    "template"
+  ],
+  "author": "",
+  "license": "MIT"
+}
