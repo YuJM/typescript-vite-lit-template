@@ -7,15 +7,45 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest --watch",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "format": "prettier --write \"src/**/*.{js,ts,css,html}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,css,html}\"",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "e2e:headed": "playwright test --headed",
+    "e2e:debug": "playwright test --debug",
+    "e2e:install": "playwright install",
+    "test:all": "npm run test:run && npm run e2e",
+    "test:ci": "npm run typecheck && npm run test:coverage && npm run e2e"
   },
   "dependencies": {
     "lit": "^3.2.1"
   },
   "devDependencies": {
+    "@open-wc/testing": "^4.0.0",
+    "@playwright/test": "^1.55.0",
     "@types/node": "^20.17.6",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-lit": "^2.1.1",
+    "eslint-plugin-wc": "^3.0.1",
+    "happy-dom": "^18.0.1",
+    "prettier": "^3.6.2",
     "typescript": "^5.7.2",
-    "vite": "^5.4.11"
+    "vite": "^5.4.11",
+    "vitest": "^3.2.4"
   },
   "keywords": [
     "typescript",

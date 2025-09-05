@@ -51,6 +51,11 @@ export class TodoList extends LitElement {
       background-color: #45a049;
     }
 
+    button:focus {
+      outline: 2px solid #4CAF50;
+      outline-offset: 2px;
+    }
+
     ul {
       list-style: none;
       padding: 0;
@@ -124,11 +129,12 @@ export class TodoList extends LitElement {
         <input 
           type="text" 
           placeholder="Enter a new todo..."
+          aria-label="New todo input"
           .value=${this.inputValue}
           @input=${this._handleInput}
           @keypress=${this._handleKeyPress}
         />
-        <button @click=${this._addTodo}>Add</button>
+        <button @click=${this._addTodo} aria-label="Add new todo">Add</button>
       </div>
 
       <ul>
@@ -138,11 +144,13 @@ export class TodoList extends LitElement {
               type="checkbox" 
               .checked=${todo.completed}
               @change=${() => this._toggleTodo(todo.id)}
+              aria-label="Mark todo as ${todo.completed ? 'incomplete' : 'complete'}"
             />
             <span>${todo.text}</span>
             <button 
               class="delete-btn"
               @click=${() => this._deleteTodo(todo.id)}
+              aria-label="Delete todo: ${todo.text}"
             >
               Delete
             </button>

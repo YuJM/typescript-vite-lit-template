@@ -36,6 +36,11 @@ export class MyElement extends LitElement {
       font-size: 1.5em;
       margin: 1em 0;
     }
+
+    button:focus {
+      outline: 2px solid #646cff;
+      outline-offset: 2px;
+    }
   `;
 
   @property({ type: String })
@@ -47,10 +52,10 @@ export class MyElement extends LitElement {
   render() {
     return html`
       <h1>Hello, ${this.name}!</h1>
-      <div class="count">Count is ${this.count}</div>
-      <button @click=${this._increment}>Increment</button>
-      <button @click=${this._decrement}>Decrement</button>
-      <button @click=${this._reset}>Reset</button>
+      <div class="count" aria-live="polite">Count is ${this.count}</div>
+      <button @click=${this._increment} aria-label="Increment count">Increment</button>
+      <button @click=${this._decrement} aria-label="Decrement count">Decrement</button>
+      <button @click=${this._reset} aria-label="Reset count to zero">Reset</button>
     `;
   }
 
